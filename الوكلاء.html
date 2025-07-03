@@ -3,9 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title src="logo.jpg">MasterMindes - الحساب الذهني </title>
+    <title> الوكلاء</title>
     <style>
-        
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            margin: 0;
+            padding: 20px;
+        }
         :root {
             --primary-white: #FFFFFF;
             --secondary-yellow: #F4A900; /* اللون الأصفر الحمصي */
@@ -93,8 +98,6 @@
         nav ul li a:hover {
             color: var(--secondary-yellow);
         }
-        
-        /* قسم البطل */
         .hero {
             background: linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9)), url('https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
             background-size: cover;
@@ -331,151 +334,95 @@
                 max-width: 350px;
             }
         }
+        h1 {
+            color: #333;
+            text-align: center;
+        }
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+        .person {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            width: 200px;
+            padding: 15px;
+            text-align: center;
+        }
+        .person img {
+            width: 100px;
+            height: 100px;
+            object-fit: cover;
+            margin-bottom: 10px;
+            border: 3px solid #000000;
+            border-radius: 5px; /* زوايا مربعة ناعمة */
+        }
+        .person h3 {
+            margin: 10px 0;
+            color: #333;
+        }
+        .person p {
+            color: #666;
+            margin: 5px 0;
+        }
     </style>
-    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
-    <!-- الشريط العلوي -->
-    <header>
+    <h1>الوكلاء</h1>
+       <!-- الشريط العلوي -->
+       <header>
         <div class="container header-container">
             <div class="logo">
                 <img src="logo.jpg" alt="MasterMindes Logo">
             </div>
             <nav>
                 <ul>
-                    <li><a href="#home">الصفحه الرئيسية</a></li>
-                    <li><a href="#certifications">Dr.Ahmed Fathi</a></li>
-                    <li><a href="#about">عن الشركة</a></li>
-                    <li><a href="الوكلاء.html">الوكلاء</a></li>
-                    <li><a href="#contact">اتصل بنا</a></li>
+                    <li><a href="index.html"> الصفحه الرئيسية</a></li>
                 </ul>
             </nav>
         </div>
     </header>
-
-    <!-- قسم البطل -->
-    <section class="hero" id="home">
-        <div class="container hero-content fade-in">
-            <h1>شركه <span> ماسترمايندس </span> للحساب الذهني و تنميه المهارات </h1>
-            <p>شركة MasterMindes الرائدة في مجال تدريب الحساب الذهني المعتمدة دوليًا ، مع شبكة واسعة من الوكلاء في مصر والعالم العربي.</p>
-            <a href="#contact" class="cta-button">انضم إلينا</a>
+    <div class="container">
+        <!-- شخص 1 -->
+        <div class="person">
+            <img src="علم مصر.png" alt="صورة الشخص">
+            <h3>خلود مراد</h3>
+            <h5>خلود مراد وكيله الشركه من القاهره(عين شمس النعام)</h5>
+            <h4>وكيله من: القاهرة</h4>
         </div>
-    </section>
-    <hr>
-
-    <!-- قسم الاعتمادات -->
-    <section class="certifications" id="certifications">
-        <div class="container">
-            <div class="section-title">
-                <h2>مؤسس الشركه</h2>
-                <h3>Dr.Ahmed Fathi</h3>
-                <h4> هو مؤسس ماسترمايندس العالميه والذي انشئها من الصفر </h4>
-            </div>
-            <img src="WhatsApp Image 2025-03-12 at 00.45.12_99e358a6.jpg" class="founder-image fade-in" alt="مؤسس الشركة">
-        </div>
-    </section>
-    <hr>
-
-    <!-- قسم معلومات الشركة -->
-    <section class="about-company" id="about">
-        <div class="container">
-            <div class="section-title">
-                <h2>معلومات عن الشركه</h2>
-                <p> أكثر من 50 وكيل حول العالم العربي</p>
-            </div>
-            <h3>شركه ماسترمايندس للحساب الذهني و تنميه المهارات هي شركه معتمده دولياً و التي تم انشائها منذ عام 2020 و هي في تطور كبير من حيث عدد المدربين والوكلاء و لها اكثر من فرع في جمهوريه مصر العربيه</h3>
-            <img src="Anno.png" class="company-image fade-in" alt="صورة الشركة">
-        </div>
-    </section>
-    <hr>
-
-    <!-- قسم الاتصال -->
-    <section class="contact" id="contact">
-        <div class="container">
-            <div class="section-title">
-                <h2>تواصل معنا</h2>
-                <p>كن جزءًا من MasterMindes</p>
-            </div>
-            <div class="contact-container">
-                <div class="contact-info fade-in">
-                    <h3>معلومات الاتصال</h3>
-                    <p><i class="fas fa-map-marker-alt"></i> العنوان: 11th Zone Commercial Market , Sadat City, Egypt, 32111</p>
-                    <p><i class="fas fa-phone"></i> الهاتف:  01000576578</p>
-                    <p><i class="fas fa-envelope"></i> البريد الإلكتروني: prof.ahmed.elqassass@gmail.com</p>
-                </div>
-                <div class="contact-form fade-in">
-                    <form>
-                        <input type="text" placeholder="اسمك الكامل" required>
-                        <input type="email" placeholder="بريدك الإلكتروني" required>
-                        <input type="tel" placeholder="رقم هاتفك">
-                        <select required>
-                            <option value="" disabled selected>اختر الدولة</option>
-                            <option value="egypt">مصر</option>
-                            <option value="ksa">السعودية</option>
-                            <option value="uae">الإمارات</option>
-                            <option value="kuwait">الكويت</option>
-                            <option value="other">دولة أخرى</option>
-                        </select>
-                        <textarea placeholder="رسالتك" rows="5" required></textarea>
-                        <button type="submit">إرسال الطلب</button>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- التذييل -->
-    <footer>
-        <div class="container">
-            <div class="footer-logo">Master<span>Mindes</span></div>
-            <p>الريادة في الحساب الذهني منذ 2020</p>
-            <div class="social-icons">
-                <a href="https://www.facebook.com/Ahmed.ElQassass.math/"><i class="fab fa-facebook-f"></i></a>
-                <a href="https://l.facebook.com/l.php?u=https%3A%2F%2Fwww.instagram.com%2Fmasterminds8333&h=AT1KY-fwxGwzgcedZVFNN3Oa8fMD7sIpr4dBV7pJC0unkShs-Tn8NtCifmMPBk7TfvQcKrAhyohwzpayrWsLS5fT3kWoYd_vXBVyVTqP_SXdrUXxCKY28UxwYPRI296HhCtokLYt5qsoqpyGEcMs"><i class="fab fa-instagram"></i></a>
-                <a href="https://l.facebook.com/l.php?u=https%3A%2F%2Fyoutube.com%2F%40ahmedfathi-masterminds3111%3Futm_source%3Dfacebook%26utm_medium%3Dconfirmed_link_feature&h=AT0bKpm2qbUhqWw00r8MLixGQ6fF-BI5PmSKVkBSTN2jJQgvsn7Y29OWAAPFZhNMob4Hq1dPT52S3FVgn-FbUAaXWDa8pjtAI_hyufKLI_QqK5tdXzNedwa2B1mx1E_K3tTDjYCYY8m8FItkZTvv"><i class="fab fa-youtube"></i></a>
-            </div>
-            <div class="copyright">
-                <p>&copy; 2025 MasterMindes. جميع الحقوق محفوظة.</p>
-            </div>
-        </div>
-    </footer>
-
-    <script>
-        // تأثيرات التمرير السلس
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
-            });
-        });
         
-        // تأثيرات الظهور عند التمرير
-        const fadeElements = document.querySelectorAll('.fade-in');
+        <!-- شخص 2 -->
+        <div class="person">
+            <img src="علم مصر.png" alt="صورة الشخص">
+            <h2>ايمان طه</h2>
+            <h4>ايمان طه وكيله الشركه من الهرم</h4>
+            <h3>وكيله من: الهرم</h3>
+        </div>
         
-        const fadeInOnScroll = () => {
-            fadeElements.forEach(element => {
-                const elementTop = element.getBoundingClientRect().top;
-                const windowHeight = window.innerHeight;
-                
-                if (elementTop < windowHeight - 100) {
-                    element.style.opacity = '1';
-                    element.style.transform = 'translateY(0)';
-                }
-            });
-        };
-        
-        // تعيين القيم الأولية
-        fadeElements.forEach(element => {
-            element.style.opacity = '0';
-            element.style.transform = 'translateY(20px)';
-            element.style.transition = 'opacity 0.6s ease-out, transform 0.6s ease-out';
-        });
-        
-        window.addEventListener('scroll', fadeInOnScroll);
-        window.addEventListener('load', fadeInOnScroll);
-    </script>
+        <!-- شخص 3 -->
+        <div class="person">
+            <img src="علم مصر.png" alt="صورة الشخص">
+            <h2>ايمان عصمت</h2>
+            <h4>ايمان عصمت وكيله الشركه من الاسكندريه </h4>
+            <h3>وكيله من:الاسكندريه </h3>
+        </div>
+        <!-- شخص 4 -->
+        <div class="person">
+            <img src="علم مصر.png" alt="صورة الشخص">
+            <h2>عبد الرحمان</h2>
+            <h4>عبد الرحمان وكيل الشركه من الجيزه </h4>
+            <h3>وكيله من:الجيزه </h3>
+        </div>
+        <!-- شخص 5 -->
+        <div class="person">
+            <img src="علم مصر.png" alt="صورة الشخص">
+            <h2>خديجه الحسيني</h2>
+            <h4>خديجه الحسيني وكيله الشركه من العاشر من رمضان </h4>
+            <h>وكيله من:العاشر من رمضان </h>
+        </div>
+    </div>
 </body>
 </html>
