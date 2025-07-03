@@ -6,7 +6,6 @@
     <title src="logo.jpg">MasterMindes - الحساب الذهني </title>
     <link rel="icon" href="/الايكونه.png" type="image/png" />
     <style>
-        
         :root {
             --primary-white: #FFFFFF;
             --secondary-yellow: #F4A900; /* اللون الأصفر الحمصي */
@@ -35,6 +34,7 @@
             width: 90%;
             max-width: 1200px;
             margin: 0 auto;
+            padding: 0 15px;
         }
         
         /* الشريط العلوي */
@@ -62,6 +62,7 @@
         .logo img {
             height: 50px;
             margin-left: 10px;
+            max-width: 100%;
         }
         
         .logo-text {
@@ -78,10 +79,13 @@
         nav ul {
             display: flex;
             list-style: none;
+            padding: 0;
+            margin: 0;
+            flex-wrap: wrap;
         }
         
         nav ul li {
-            margin-left: 25px;
+            margin-left: 15px;
         }
         
         nav ul li a {
@@ -89,6 +93,8 @@
             color: var(--accent-black);
             font-weight: 500;
             transition: color 0.3s;
+            font-size: 0.9rem;
+            white-space: nowrap;
         }
         
         nav ul li a:hover {
@@ -97,20 +103,22 @@
         
         /* قسم البطل */
         .hero {
-            background: linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9)), url('https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+            background: linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9)), 
+                        url('https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
             background-size: cover;
             background-position: center;
-            height: 100vh;
+            min-height: 100vh;
             display: flex;
             align-items: center;
             text-align: center;
-            padding-top: 80px;
+            padding: 100px 0 50px;
         }
         
         .hero-content h1 {
-            font-size: 3rem;
+            font-size: 2.5rem;
             margin-bottom: 20px;
             color: var(--accent-black);
+            line-height: 1.3;
         }
         
         .hero-content h1 span {
@@ -118,9 +126,10 @@
         }
         
         .hero-content p {
-            font-size: 1.2rem;
+            font-size: 1.1rem;
             max-width: 700px;
             margin: 0 auto 30px;
+            padding: 0 15px;
         }
         
         .cta-button {
@@ -133,6 +142,7 @@
             font-weight: 600;
             transition: all 0.3s;
             border: 2px solid var(--secondary-yellow);
+            font-size: 1rem;
         }
         
         .cta-button:hover {
@@ -142,21 +152,23 @@
         
         /* قسم الاعتمادات */
         .certifications {
-            padding: 80px 0;
+            padding: 60px 0;
             background-color: #f9f9f9;
             text-align: center;
         }
         
         .section-title {
             text-align: center;
-            margin-bottom: 50px;
+            margin-bottom: 40px;
+            padding: 0 15px;
         }
         
         .section-title h2 {
-            font-size: 2.2rem;
+            font-size: 2rem;
             position: relative;
             display: inline-block;
             padding-bottom: 15px;
+            margin-bottom: 15px;
         }
         
         .section-title h2:after {
@@ -170,71 +182,92 @@
             transform: translateX(-50%);
         }
         
+        .section-title h3, 
+        .section-title h4,
+        .section-title p {
+            margin: 10px 0;
+        }
+        
         .founder-image {
-            max-width: 300px;
-            margin: 30px auto;
+            max-width: 250px;
+            width: 100%;
+            margin: 20px auto;
             display: block;
             border-radius: 10px;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            height: auto;
         }
         
         /* قسم معلومات الشركة */
         .about-company {
-            padding: 80px 0;
+            padding: 60px 0;
             text-align: center;
         }
         
         .about-company h3 {
-            font-size: 1.3rem;
+            font-size: 1.1rem;
             line-height: 1.8;
             max-width: 800px;
             margin: 0 auto 30px;
+            padding: 0 15px;
         }
         
         .company-image {
-            max-width: 500px;
-            width: 100%;
-            margin: 30px auto;
+            max-width: 100%;
+            width: 500px;
+            margin: 20px auto;
             display: block;
             border-radius: 10px;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            height: auto;
         }
         
         /* قسم الاتصال */
         .contact {
-            padding: 80px 0;
+            padding: 60px 0;
             background-color: #f9f9f9;
         }
         
         .contact-container {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 40px;
+            grid-template-columns: 1fr;
+            gap: 30px;
+        }
+        
+        .contact-info {
+            padding: 0 15px;
         }
         
         .contact-info h3 {
-            font-size: 1.5rem;
+            font-size: 1.3rem;
             margin-bottom: 20px;
             color: var(--accent-black);
         }
         
         .contact-info p {
             margin-bottom: 15px;
+            font-size: 0.95rem;
         }
         
         .contact-info i {
             color: var(--secondary-yellow);
-            margin-left: 10px;
+            margin-left: 8px;
+        }
+        
+        .contact-form {
+            padding: 0 15px;
         }
         
         .contact-form input,
-        .contact-form textarea {
+        .contact-form textarea,
+        .contact-form select {
             width: 100%;
-            padding: 12px;
+            padding: 10px;
             margin-bottom: 15px;
             border: 1px solid #ddd;
             border-radius: 5px;
             font-family: inherit;
+            font-size: 0.95rem;
         }
         
         .contact-form button {
@@ -246,6 +279,9 @@
             cursor: pointer;
             font-weight: 600;
             transition: all 0.3s;
+            font-size: 1rem;
+            width: 100%;
+            max-width: 200px;
         }
         
         .contact-form button:hover {
@@ -256,14 +292,14 @@
         footer {
             background-color: var(--accent-black);
             color: var(--primary-white);
-            padding: 40px 0 20px;
+            padding: 30px 0 20px;
             text-align: center;
         }
         
         .footer-logo {
-            font-size: 1.8rem;
+            font-size: 1.6rem;
             font-weight: 700;
-            margin-bottom: 20px;
+            margin-bottom: 15px;
         }
         
         .footer-logo span {
@@ -271,13 +307,13 @@
         }
         
         .social-icons {
-            margin: 20px 0;
+            margin: 15px 0;
         }
         
         .social-icons a {
             color: var(--primary-white);
-            margin: 0 10px;
-            font-size: 1.2rem;
+            margin: 0 8px;
+            font-size: 1.1rem;
             transition: color 0.3s;
         }
         
@@ -287,9 +323,9 @@
         
         .copyright {
             border-top: 1px solid #333;
-            padding-top: 20px;
-            margin-top: 20px;
-            font-size: 0.9rem;
+            padding-top: 15px;
+            margin-top: 15px;
+            font-size: 0.85rem;
         }
         
         /* تأثيرات الحركة */
@@ -302,20 +338,18 @@
             animation: fadeIn 1s ease-out forwards;
         }
         
+        /* القائمة المنسدلة للهواتف */
+        .menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--accent-black);
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+        
         /* التجاوب */
-        @media (max-width: 768px) {
-            .header-container {
-                flex-direction: column;
-            }
-            
-            nav ul {
-                margin-top: 15px;
-            }
-            
-            nav ul li {
-                margin: 0 10px;
-            }
-            
+        @media (max-width: 992px) {
             .hero-content h1 {
                 font-size: 2.2rem;
             }
@@ -324,12 +358,91 @@
                 font-size: 1rem;
             }
             
-            .founder-image {
-                max-width: 250px;
+            .section-title h2 {
+                font-size: 1.8rem;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .header-container {
+                flex-direction: row;
+                justify-content: space-between;
+                padding: 10px 0;
+            }
+            
+            .menu-toggle {
+                display: block;
+            }
+            
+            nav {
+                position: fixed;
+                top: 70px;
+                right: -100%;
+                width: 80%;
+                max-width: 300px;
+                background-color: var(--primary-white);
+                box-shadow: -5px 0 15px rgba(0,0,0,0.1);
+                transition: right 0.3s ease;
+                z-index: 999;
+                padding: 20px;
+                border-radius: 0 0 0 10px;
+            }
+            
+            nav.active {
+                right: 0;
+            }
+            
+            nav ul {
+                flex-direction: column;
+            }
+            
+            nav ul li {
+                margin: 10px 0;
+                text-align: right;
+            }
+            
+            .hero {
+                padding: 80px 0 40px;
+            }
+            
+            .hero-content h1 {
+                font-size: 2rem;
+                padding: 0 10px;
+            }
+            
+            .contact-container {
+                grid-template-columns: 1fr;
             }
             
             .company-image {
-                max-width: 350px;
+                width: 100%;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .hero-content h1 {
+                font-size: 1.8rem;
+            }
+            
+            .cta-button {
+                padding: 10px 25px;
+                font-size: 0.9rem;
+            }
+            
+            .section-title h2 {
+                font-size: 1.6rem;
+            }
+            
+            .about-company h3 {
+                font-size: 1rem;
+            }
+            
+            .contact-info p {
+                font-size: 0.9rem;
+            }
+            
+            .footer-logo {
+                font-size: 1.4rem;
             }
         }
     </style>
@@ -343,7 +456,10 @@
             <div class="logo">
                 <img src="logo.jpg" alt="MasterMindes Logo">
             </div>
-            <nav>
+            <button class="menu-toggle" id="menuToggle">
+                <i class="fas fa-bars"></i>
+            </button>
+            <nav id="mainNav">
                 <ul>
                     <li><a href="#home">الصفحه الرئيسية</a></li>
                     <li><a href="#certifications">Dr.Ahmed Fathi</a></li>
@@ -450,6 +566,12 @@
                 document.querySelector(this.getAttribute('href')).scrollIntoView({
                     behavior: 'smooth'
                 });
+                
+                // إغلاق القائمة إذا كانت مفتوحة على الأجهزة الصغيرة
+                const nav = document.getElementById('mainNav');
+                if (nav.classList.contains('active')) {
+                    nav.classList.remove('active');
+                }
             });
         });
         
@@ -473,6 +595,21 @@
             element.style.opacity = '0';
             element.style.transform = 'translateY(20px)';
             element.style.transition = 'opacity 0.6s ease-out, transform 0.6s ease-out';
+        });
+        
+        // القائمة المنسدلة للهواتف
+        const menuToggle = document.getElementById('menuToggle');
+        const mainNav = document.getElementById('mainNav');
+        
+        menuToggle.addEventListener('click', () => {
+            mainNav.classList.toggle('active');
+        });
+        
+        // إغلاق القائمة عند النقر خارجها
+        document.addEventListener('click', (e) => {
+            if (!mainNav.contains(e.target) && e.target !== menuToggle) {
+                mainNav.classList.remove('active');
+            }
         });
         
         window.addEventListener('scroll', fadeInOnScroll);

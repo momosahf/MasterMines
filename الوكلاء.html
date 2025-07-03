@@ -6,12 +6,6 @@
     <link rel="icon" href="/الايكونه.png" type="image/png" />
     <title> الوكلاء</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f5f5f5;
-            margin: 0;
-            padding: 20px;
-        }
         :root {
             --primary-white: #FFFFFF;
             --secondary-yellow: #F4A900; /* اللون الأصفر الحمصي */
@@ -40,6 +34,7 @@
             width: 90%;
             max-width: 1200px;
             margin: 0 auto;
+            padding-top: 80px;
         }
         
         /* الشريط العلوي */
@@ -83,6 +78,8 @@
         nav ul {
             display: flex;
             list-style: none;
+            padding: 0;
+            margin: 0;
         }
         
         nav ul li {
@@ -94,165 +91,69 @@
             color: var(--accent-black);
             font-weight: 500;
             transition: color 0.3s;
+            font-size: 1rem;
         }
         
         nav ul li a:hover {
             color: var(--secondary-yellow);
         }
-        .hero {
-            background: linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9)), url('https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
-            background-size: cover;
-            background-position: center;
-            height: 100vh;
+        
+        h1 {
+            color: #333;
+            text-align: center;
+            margin-top: 30px;
+            margin-bottom: 30px;
+            font-size: 2rem;
+        }
+        
+        .agents-container {
             display: flex;
-            align-items: center;
-            text-align: center;
-            padding-top: 80px;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            padding: 20px 0;
         }
         
-        .hero-content h1 {
-            font-size: 3rem;
-            margin-bottom: 20px;
-            color: var(--accent-black);
-        }
-        
-        .hero-content h1 span {
-            color: var(--secondary-yellow);
-        }
-        
-        .hero-content p {
-            font-size: 1.2rem;
-            max-width: 700px;
-            margin: 0 auto 30px;
-        }
-        
-        .cta-button {
-            display: inline-block;
-            background-color: var(--secondary-yellow);
-            color: var(--primary-white);
-            padding: 12px 30px;
-            border-radius: 30px;
-            text-decoration: none;
-            font-weight: 600;
-            transition: all 0.3s;
-            border: 2px solid var(--secondary-yellow);
-        }
-        
-        .cta-button:hover {
-            background-color: transparent;
-            color: var(--secondary-yellow);
-        }
-        
-        /* قسم الاعتمادات */
-        .certifications {
-            padding: 80px 0;
-            background-color: #f9f9f9;
-            text-align: center;
-        }
-        
-        .section-title {
-            text-align: center;
-            margin-bottom: 50px;
-        }
-        
-        .section-title h2 {
-            font-size: 2.2rem;
-            position: relative;
-            display: inline-block;
-            padding-bottom: 15px;
-        }
-        
-        .section-title h2:after {
-            content: '';
-            position: absolute;
-            width: 50px;
-            height: 3px;
-            background-color: var(--secondary-yellow);
-            bottom: 0;
-            left: 50%;
-            transform: translateX(-50%);
-        }
-        
-        .founder-image {
-            max-width: 300px;
-            margin: 30px auto;
-            display: block;
+        .person {
+            background-color: white;
             border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-        }
-        
-        /* قسم معلومات الشركة */
-        .about-company {
-            padding: 80px 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            width: 100%;
+            max-width: 280px;
+            padding: 20px;
             text-align: center;
+            transition: transform 0.3s, box-shadow 0.3s;
         }
         
-        .about-company h3 {
-            font-size: 1.3rem;
-            line-height: 1.8;
-            max-width: 800px;
-            margin: 0 auto 30px;
+        .person:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
         }
         
-        .company-image {
-            max-width: 500px;
-            width: 100%;
-            margin: 30px auto;
-            display: block;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-        }
-        
-        /* قسم الاتصال */
-        .contact {
-            padding: 80px 0;
-            background-color: #f9f9f9;
-        }
-        
-        .contact-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 40px;
-        }
-        
-        .contact-info h3 {
-            font-size: 1.5rem;
-            margin-bottom: 20px;
-            color: var(--accent-black);
-        }
-        
-        .contact-info p {
+        .person img {
+            width: 120px;
+            height: 120px;
+            object-fit: cover;
             margin-bottom: 15px;
-        }
-        
-        .contact-info i {
-            color: var(--secondary-yellow);
-            margin-left: 10px;
-        }
-        
-        .contact-form input,
-        .contact-form textarea {
-            width: 100%;
-            padding: 12px;
-            margin-bottom: 15px;
-            border: 1px solid #ddd;
+            border: 3px solid var(--secondary-yellow);
             border-radius: 5px;
-            font-family: inherit;
         }
         
-        .contact-form button {
-            background-color: var(--secondary-yellow);
-            color: var(--primary-white);
-            border: none;
-            padding: 12px 30px;
-            border-radius: 30px;
-            cursor: pointer;
-            font-weight: 600;
-            transition: all 0.3s;
+        .person h2, .person h3, .person h4, .person h5 {
+            margin: 10px 0;
+            color: #333;
+            line-height: 1.4;
         }
         
-        .contact-form button:hover {
-            opacity: 0.9;
+        .person h2 {
+            font-size: 1.3rem;
+            color: var(--accent-black);
+        }
+        
+        .person h3, .person h4, .person h5 {
+            font-size: 1rem;
+            color: #555;
+            font-weight: normal;
         }
         
         /* التذييل */
@@ -261,6 +162,7 @@
             color: var(--primary-white);
             padding: 40px 0 20px;
             text-align: center;
+            margin-top: 50px;
         }
         
         .footer-logo {
@@ -308,122 +210,156 @@
         /* التجاوب */
         @media (max-width: 768px) {
             .header-container {
-                flex-direction: column;
+                flex-direction: row;
+                padding: 10px 0;
+            }
+            
+            .logo img {
+                height: 40px;
             }
             
             nav ul {
-                margin-top: 15px;
+                flex-wrap: wrap;
+                justify-content: center;
             }
             
             nav ul li {
+                margin: 0 8px;
+            }
+            
+            nav ul li a {
+                font-size: 0.9rem;
+            }
+            
+            h1 {
+                font-size: 1.8rem;
+                margin-top: 20px;
+            }
+            
+            .person {
+                max-width: 220px;
+                padding: 15px;
+            }
+            
+            .person img {
+                width: 100px;
+                height: 100px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .header-container {
+                flex-direction: column;
+                padding: 10px 0;
+            }
+            
+            .logo {
+                margin-bottom: 10px;
+            }
+            
+            nav ul li {
+                margin: 0 5px;
+            }
+            
+            nav ul li a {
+                font-size: 0.8rem;
+            }
+            
+            h1 {
+                font-size: 1.5rem;
+            }
+            
+            .agents-container {
+                gap: 15px;
+            }
+            
+            .person {
+                max-width: 100%;
                 margin: 0 10px;
             }
             
-            .hero-content h1 {
-                font-size: 2.2rem;
+            .person img {
+                width: 80px;
+                height: 80px;
             }
-            
-            .hero-content p {
-                font-size: 1rem;
-            }
-            
-            .founder-image {
-                max-width: 250px;
-            }
-            
-            .company-image {
-                max-width: 350px;
-            }
-        }
-        h1 {
-            color: #333;
-            text-align: center;
-        }
-        .container {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 20px;
-        }
-        .person {
-            background-color: white;
-            border-radius: 10px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-            width: 200px;
-            padding: 15px;
-            text-align: center;
-        }
-        .person img {
-            width: 100px;
-            height: 100px;
-            object-fit: cover;
-            margin-bottom: 10px;
-            border: 3px solid #000000;
-            border-radius: 5px; /* زوايا مربعة ناعمة */
-        }
-        .person h3 {
-            margin: 10px 0;
-            color: #333;
-        }
-        .person p {
-            color: #666;
-            margin: 5px 0;
         }
     </style>
 </head>
 <body>
-    <h1>الوكلاء</h1>
-       <!-- الشريط العلوي -->
-       <header>
+    <!-- الشريط العلوي -->
+    <header>
         <div class="container header-container">
             <div class="logo">
                 <img src="logo.jpg" alt="MasterMindes Logo">
             </div>
             <nav>
                 <ul>
-                    <li><a href="index.html"> الصفحه الرئيسية</a></li>
+                    <li><a href="index.html">الصفحه الرئيسية</a></li>
                 </ul>
             </nav>
         </div>
     </header>
+    
     <div class="container">
-        <!-- شخص 1 -->
-        <div class="person">
-            <img src="علم مصر.png" alt="صورة الشخص">
-            <h3>خلود مراد</h3>
-            <h5>خلود مراد وكيله الشركه من القاهره(عين شمس النعام)</h5>
-            <h4>وكيله من: القاهرة</h4>
-        </div>
-        
-        <!-- شخص 2 -->
-        <div class="person">
-            <img src="علم مصر.png" alt="صورة الشخص">
-            <h2>ايمان طه</h2>
-            <h4>ايمان طه وكيله الشركه من الهرم</h4>
-            <h3>وكيله من: الهرم</h3>
-        </div>
-        
-        <!-- شخص 3 -->
-        <div class="person">
-            <img src="علم مصر.png" alt="صورة الشخص">
-            <h2>ايمان عصمت</h2>
-            <h4>ايمان عصمت وكيله الشركه من الاسكندريه </h4>
-            <h3>وكيله من:الاسكندريه </h3>
-        </div>
-        <!-- شخص 4 -->
-        <div class="person">
-            <img src="علم مصر.png" alt="صورة الشخص">
-            <h2>عبد الرحمان</h2>
-            <h4>عبد الرحمان وكيل الشركه من الجيزه </h4>
-            <h3>وكيله من:الجيزه </h3>
-        </div>
-        <!-- شخص 5 -->
-        <div class="person">
-            <img src="علم مصر.png" alt="صورة الشخص">
-            <h2>خديجه الحسيني</h2>
-            <h4>خديجه الحسيني وكيله الشركه من العاشر من رمضان </h4>
-            <h>وكيله من:العاشر من رمضان </h>
+        <h1>الوكلاء</h1>
+        <div class="agents-container">
+            <!-- شخص 1 -->
+            <div class="person fade-in">
+                <img src="علم مصر.png" alt="صورة الشخص">
+                <h3>خلود مراد</h3>
+                <h5>خلود مراد وكيله الشركه من القاهره(عين شمس النعام)</h5>
+                <h4>وكيله من: القاهرة</h4>
+            </div>
+            
+            <!-- شخص 2 -->
+            <div class="person fade-in">
+                <img src="علم مصر.png" alt="صورة الشخص">
+                <h3>ايمان طه</h3>
+                <h5>ايمان طه وكيله الشركه من الهرم</h5>
+                <h4>وكيله من: الهرم</h4>
+            </div>
+            
+            <!-- شخص 3 -->
+            <div class="person fade-in">
+                <img src="علم مصر.png" alt="صورة الشخص">
+                <h3>ايمان عصمت</h3>
+                <h5>ايمان عصمت وكيله الشركه من الاسكندريه</h5>
+                <h4>وكيله من:الاسكندريه</h4>
+            </div>
+            
+            <!-- شخص 4 -->
+            <div class="person fade-in">
+                <img src="علم مصر.png" alt="صورة الشخص">
+                <h3>عبد الرحمان</h3>
+                <h5>عبد الرحمان وكيل الشركه من الجيزه</h5>
+                <h4>وكيل من:الجيزه</h4>
+            </div>
+            
+            <!-- شخص 5 -->
+            <div class="person fade-in">
+                <img src="علم مصر.png" alt="صورة الشخص">
+                <h3>خديجه الحسيني</h3>
+                <h5>خديجه الحسيني وكيله الشركه من العاشر من رمضان</h5>
+                <h4>وكيله من:العاشر من رمضان</h4>
+            </div>
         </div>
     </div>
+    
+    <footer>
+        <div class="container">
+            <div class="footer-logo">
+                Master<span>Mindes</span>
+            </div>
+            <div class="social-icons">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+            <div class="copyright">
+                &copy; 2023 جميع الحقوق محفوظة لشركة MasterMindes
+            </div>
+        </div>
+    </footer>
 </body>
 </html>
