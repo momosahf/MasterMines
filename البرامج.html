@@ -1,0 +1,669 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" href="/الايكونه.png" type="image/png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تحميل البرامج | MasterMindes</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-black: #000000;
+            --primary-white: #FFFFFF;
+            --accent-yellow: #F4A900; /* الأصفر الحمصي */
+            --dark-gray: #1A1A1A;
+            --light-gray: #333333;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Tajawal', Arial, sans-serif;
+        }
+
+        body {
+            background-color: var(--primary-black);
+            color: var(--primary-white);
+            line-height: 1.6;
+        }
+
+        /* الشريط العلوي */
+        header {
+            background-color: var(--primary-black);
+            box-shadow: 0 2px 20px rgba(244, 169, 0, 0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid var(--accent-yellow);
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 5%;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo img {
+            height: 40px;
+            margin-left: 10px;
+        }
+
+        .logo-text {
+            font-weight: 700;
+            font-size: 1.5rem;
+            color: var(--primary-white);
+        }
+
+        .logo-text span {
+            color: var(--accent-yellow);
+        }
+
+        /* القائمة */
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+
+        nav ul li {
+            margin-left: 25px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: var(--primary-white);
+            font-weight: 500;
+            transition: color 0.3s;
+            font-size: 1rem;
+            position: relative;
+        }
+
+        nav ul li a:hover {
+            color: var(--accent-yellow);
+        }
+
+        nav ul li a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            background: var(--accent-yellow);
+            bottom: -5px;
+            right: 0;
+            transition: width 0.3s;
+        }
+
+        nav ul li a:hover::after {
+            width: 100%;
+            left: 0;
+        }
+
+        /* قسم الهيرو */
+        .hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url('https://images.unsplash.com/photo-1550751827-4bd374c3f58b?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            padding: 120px 5% 80px;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero-content h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            color: var(--primary-white);
+        }
+
+        .hero-content h1 span {
+            color: var(--accent-yellow);
+        }
+
+        .hero-content p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            color: #ccc;
+        }
+
+        .search-bar {
+            display: flex;
+            max-width: 600px;
+            margin: 0 auto 40px;
+        }
+
+        .search-bar input {
+            flex: 1;
+            padding: 15px 20px;
+            border: none;
+            border-radius: 30px 0 0 30px;
+            font-size: 1rem;
+            background: var(--dark-gray);
+            color: var(--primary-white);
+        }
+
+        .search-bar button {
+            background: var(--accent-yellow);
+            color: var(--primary-black);
+            border: none;
+            padding: 0 25px;
+            border-radius: 0 30px 30px 0;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+
+        .search-bar button:hover {
+            background: #ffc107;
+        }
+
+        /* قسم البرامج */
+        .software-section {
+            padding: 80px 5%;
+            background: var(--dark-gray);
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-title h2 {
+            font-size: 2.2rem;
+            position: relative;
+            display: inline-block;
+            padding-bottom: 15px;
+        }
+
+        .section-title h2:after {
+            content: '';
+            position: absolute;
+            width: 70px;
+            height: 3px;
+            background-color: var(--accent-yellow);
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .software-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .software-card {
+            background: var(--light-gray);
+            border-radius: 10px;
+            overflow: hidden;
+            transition: transform 0.3s, box-shadow 0.3s;
+            border: 1px solid #444;
+        }
+
+        .software-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(244, 169, 0, 0.2);
+        }
+
+        .software-image {
+            height: 180px;
+            background-color: var(--primary-black);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-bottom: 2px solid var(--accent-yellow);
+        }
+
+        .software-image img {
+            max-width: 80%;
+            max-height: 80%;
+        }
+
+        .software-info {
+            padding: 20px;
+        }
+
+        .software-info h3 {
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+            color: var(--primary-white);
+        }
+
+        .software-info p {
+            color: #aaa;
+            margin-bottom: 15px;
+            font-size: 0.9rem;
+        }
+
+        .software-meta {
+            display: flex;
+            justify-content: space-between;
+            color: #888;
+            font-size: 0.8rem;
+            margin-bottom: 15px;
+        }
+
+        .download-btn {
+            display: block;
+            background: var(--accent-yellow);
+            color: var(--primary-black);
+            text-align: center;
+            padding: 10px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+
+        .download-btn:hover {
+            background: #ffc107;
+        }
+
+        /* قسم المميزات */
+        .features {
+            padding: 80px 5%;
+            background: var(--primary-black);
+        }
+
+        .features-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .feature-box {
+            text-align: center;
+            padding: 30px;
+            border: 1px solid #333;
+            border-radius: 10px;
+            transition: all 0.3s;
+        }
+
+        .feature-box:hover {
+            border-color: var(--accent-yellow);
+            transform: translateY(-5px);
+        }
+
+        .feature-icon {
+            font-size: 2.5rem;
+            color: var(--accent-yellow);
+            margin-bottom: 20px;
+        }
+
+        .feature-box h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: var(--primary-white);
+        }
+
+        .feature-box p {
+            color: #aaa;
+        }
+
+        /* التذييل */
+        footer {
+            background: #111;
+            padding: 60px 5% 30px;
+            border-top: 1px solid var(--accent-yellow);
+        }
+
+        .footer-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: var(--primary-white);
+        }
+
+        .footer-logo span {
+            color: var(--accent-yellow);
+        }
+
+        .footer-about p {
+            color: #aaa;
+            margin-bottom: 20px;
+        }
+
+        .social-icons a {
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            background: #333;
+            color: var(--primary-white);
+            border-radius: 50%;
+            text-align: center;
+            line-height: 40px;
+            margin-right: 10px;
+            transition: all 0.3s;
+        }
+
+        .social-icons a:hover {
+            background: var(--accent-yellow);
+            color: var(--primary-black);
+        }
+
+        .footer-links h3, .footer-contact h3 {
+            font-size: 1.3rem;
+            margin-bottom: 20px;
+            color: var(--primary-white);
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .footer-links h3:after, .footer-contact h3:after {
+            content: '';
+            position: absolute;
+            width: 40px;
+            height: 2px;
+            background: var(--accent-yellow);
+            bottom: 0;
+            right: 0;
+        }
+
+        .footer-links ul {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+
+        .footer-links a {
+            color: #aaa;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: var(--accent-yellow);
+        }
+
+        .contact-info {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 15px;
+        }
+
+        .contact-info i {
+            color: var(--accent-yellow);
+            margin-left: 10px;
+            font-size: 1.2rem;
+        }
+
+        .contact-text {
+            color: #aaa;
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 30px;
+            margin-top: 30px;
+            border-top: 1px solid #333;
+            color: #777;
+            font-size: 0.9rem;
+        }
+
+        /* تأثيرات الحركة */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .fade-in {
+            animation: fadeIn 1s ease-out forwards;
+        }
+
+        /* التجاوب */
+        @media (max-width: 992px) {
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .header-container {
+                flex-direction: column;
+                padding: 15px 5%;
+            }
+
+            .logo {
+                margin-bottom: 15px;
+            }
+
+            nav ul {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            nav ul li {
+                margin: 0 10px 10px;
+            }
+
+            .hero-content h1 {
+                font-size: 2rem;
+            }
+
+            .hero-content p {
+                font-size: 1rem;
+            }
+
+            .section-title h2 {
+                font-size: 1.8rem;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .hero {
+                padding: 100px 5% 60px;
+            }
+
+            .hero-content h1 {
+                font-size: 1.8rem;
+            }
+
+            .search-bar {
+                flex-direction: column;
+            }
+
+            .search-bar input {
+                border-radius: 30px;
+                margin-bottom: 10px;
+            }
+
+            .search-bar button {
+                border-radius: 30px;
+                padding: 12px;
+            }
+
+            .software-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .features-container {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- الشريط العلوي -->
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <img src="logo.jpg" alt="MasterMindes Logo">
+                <div class="logo-text">Master<span>Mindes</span></div>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html"> الصفحه الرئيسية</a></li>
+                    <li><a href="الوكلاء.html">الوكلاء</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- قسم الهيرو -->
+    <section class="hero">
+        <div class="hero-content fade-in">
+            <h1>مرحبًا بكم في <span>MasterMindes</span></h1>
+            <p>البرامج والتطبيقات الأكثر طلبًا للحساب الذهني</p>
+            
+            <div class="search-bar">
+                <button><i class="fas fa-search"></i> بحث</button>
+                <input type="text" placeholder="ابحث عن البرنامج الذي تريده...">
+            </div>
+        </div>
+    </section>
+
+    <!-- قسم البرامج -->
+    <section class="software-section">
+        <div class="section-title fade-in">
+            <h2>كل البرامج</h2>
+        </div>
+
+        <div class="software-grid">
+            <!-- برنامج 1 -->
+            <div class="software-card fade-in">
+                <div class="software-image">
+                    <img src="a.png" alt="برنامج 1">
+                </div>
+                <div class="software-info">
+                    <h3>Know Abacus</h3>
+                    <p>برنامج اسئله + عداد للاجابه</p>
+                    <div class="software-meta">
+                        <span><i class=""></i> </span>
+                        <span><i class="fas fa-hdd"></i> 35.8MB</span>
+                        <span><i class=""></i> </span>
+                    </div>
+                    <a href="know-abacus-2-0.apk" class="download-btn"><i class="fas fa-download"></i> تحميل</a>
+                </div>
+            </div>
+
+            <!-- برنامج 2 -->
+            <div class="software-card fade-in">
+                <div class="software-image">
+                    <img src="https://image.winudf.com/v2/image1/bWFraW5vLmFuZHJvaWQuYWJhY3VzX3JlYWRfaWNvbl8xNjUwOTA1NDYzXzA4MA/icon.webp?w=140&fakeurl=1&type=.webp" alt="برنامج 2">
+                </div>
+                <div class="software-info">
+                    <h3>Abacus Read</h3>
+                    <p>اسئله متطوره و جميله</p>
+                    <div class="software-meta">
+
+                        <span><i class="fas fa-hdd"></i> 5.1MB</span>
+                        <span><i class=""></i> </span>
+                    </div>
+                    <a href="Abacus Read_1.17_APKPure.apk" class="download-btn"><i class="fas fa-download"></i> تحميل</a>
+                </div>
+            </div>
+
+            <!-- برنامج 3 -->
+            <!-- <div class="software-card fade-in">
+                <div class="software-image">
+                    <img src="https://via.placeholder.com/150x150" alt="برنامج 3">
+                </div>
+                <div class="software-info">
+                    <h3>أداة الأمان</h3>
+                    <p>حماية شاملة لجهازك من الفيروسات والتهديدات</p>
+                    <div class="software-meta">
+                        <span><i class="fas fa-download"></i> 15.7K</span>
+                        <span><i class="fas fa-hdd"></i> 78MB</span>
+                        <span><i class="fas fa-star"></i> 4.9</span>
+                    </div>
+                    <a href="#" class="download-btn"><i class="fas fa-download"></i> تحميل</a>
+                </div>-->
+            </div>
+        </div>
+    </section>
+
+    <!-- قسم المميزات -->
+    <section class="features">
+        <div class="section-title fade-in">
+            <h2>لماذا نحن الأفضل؟</h2>
+        </div>
+
+        <div class="features-container">
+            <div class="feature-box fade-in">
+                <div class="feature-icon">
+                    <i class="fas fa-shield-alt"></i>
+                </div>
+                <h3>آمن تمامًا</h3>
+                <p>جميع برامجنا خالية من الفيروسات والبرمجيات الخبيثة، مع فحص دوري للتأكد من سلامتها</p>
+            </div>
+
+            <div class="feature-box fade-in">
+                <div class="feature-icon">
+                    <i class="fas fa-bolt"></i>
+                </div>
+                <h3>تحميل سريع</h3>
+                <p>سرعات تحميل عالية مع خوادم متعددة حول العالم لضمان تجربة تحميل سلسة</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- التذييل -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-about">
+                <div class="footer-logo">Master<span>Mindes</span></div>
+                <p>نقدم لكم أفضل البرامج والتطبيقات بأعلى جودة وأحدث إصدار، مع ضمان الأمان والسرعة في التحميل.</p>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+
+            <div class="footer-links">
+                <h3>روابط سريعة</h3>
+                <ul>
+                    <li><a href="#">الرئيسية</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-contact">
+                <h3>اتصل بنا</h3>
+                <div class="contact-info">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <div class="contact-text">القاهرة، مصر</div>
+                </div>
+                <div class="contact-info">
+                    <i class="fas fa-envelope"></i>
+                    <div class="contact-text">info@mastermindes.com</div>
+                </div>
+                <div class="contact-info">
+                    <i class="fas fa-phone-alt"></i>
+                    <div class="contact-text">+20 123 456 7890</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="copyright">
+            &copy; 2023 جميع الحقوق محفوظة لشركة MasterMindes
+        </div>
+    </footer>
+</body>
+</html>
